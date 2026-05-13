@@ -1,0 +1,202 @@
+@import "tailwindcss";
+
+:root {
+  --background: #080806;
+  --foreground: #f4f0e8;
+  --muted: #9d9488;
+  --accent-gold: #d7b96f;
+  --accent-red: #9b2424;
+  --accent-ink: #17130f;
+  --accent-sakura: #d999a8;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-space-grotesk);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.14;
+  z-index: 2;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+  mix-blend-mode: soft-light;
+}
+
+.sakura-branch-wash {
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='1200' height='900' viewBox='0 0 1200 900' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%2350322D' stroke-width='4' stroke-linecap='round' opacity='.74'%3E%3Cpath d='M-80 804C90 706 220 596 378 450C520 318 640 184 812 42'/%3E%3Cpath d='M360 466C332 360 360 266 452 174'/%3E%3Cpath d='M472 374C582 350 682 292 770 198'/%3E%3Cpath d='M640 244C730 226 824 174 930 66'/%3E%3C/g%3E%3Cg fill='%23F0A5B5' opacity='.82'%3E%3Ccircle cx='454' cy='174' r='13'/%3E%3Ccircle cx='435' cy='190' r='9'/%3E%3Ccircle cx='472' cy='192' r='8'/%3E%3Ccircle cx='520' cy='362' r='11'/%3E%3Ccircle cx='540' cy='348' r='8'/%3E%3Ccircle cx='770' cy='198' r='12'/%3E%3Ccircle cx='792' cy='188' r='8'/%3E%3C/g%3E%3C/svg%3E");
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: min(92vw, 980px);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-space-grotesk), sans-serif;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(215, 185, 111, 0.7) rgba(255, 255, 255, 0.08);
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(215, 185, 111, 0.85), rgba(155, 36, 36, 0.7));
+}
+
+.glass-panel {
+  border: 1px solid rgba(244, 240, 232, 0.13);
+  background: rgba(8, 8, 6, 0.62);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.09), 0 24px 80px rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(18px);
+}
+
+.section-divider {
+  height: 1px;
+  width: min(92%, 84rem);
+  margin-block: 0;
+  margin-inline: auto;
+  background: linear-gradient(90deg, transparent, rgba(244, 240, 232, 0.24), transparent);
+}
+
+@keyframes marquee-left {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  white-space: nowrap;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+.marquee-group {
+  flex: 0 0 auto;
+  padding-right: 2rem;
+}
+
+.paper-grain-soft,
+.paper-grain-medium,
+.paper-grain-strong {
+  position: relative;
+  isolation: isolate;
+}
+
+.paper-grain-soft::after,
+.paper-grain-medium::after,
+.paper-grain-strong::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220' viewBox='0 0 220 220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='0.26'/%3E%3C/svg%3E");
+  background-size: 220px 220px;
+  mix-blend-mode: soft-light;
+}
+
+.paper-grain-soft::after {
+  opacity: 0.18;
+}
+
+.paper-grain-medium::after {
+  opacity: 0.26;
+}
+
+.paper-grain-strong::after {
+  opacity: 0.34;
+}
+
+@keyframes sakura-fall {
+  0% {
+    transform: translate3d(0, -12vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: translate3d(10vw, 112vh, 0) rotate(520deg);
+    opacity: 0;
+  }
+}
+
+@keyframes sakura-sway {
+  0%,
+  100% {
+    margin-left: 0;
+  }
+  50% {
+    margin-left: -3vw;
+  }
+}
+
+.sakura-petal {
+  position: absolute;
+  top: -10vh;
+  width: 10px;
+  height: 16px;
+  border-radius: 70% 30% 70% 30%;
+  background: linear-gradient(160deg, rgba(231, 174, 188, 0.78), rgba(155, 36, 36, 0.72));
+  box-shadow: 0 0 10px rgba(217, 153, 168, 0.22);
+  animation-name: sakura-fall, sakura-sway;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sakura-petal {
+    display: none;
+  }
+
+  .marquee-track {
+    animation: none !important;
+  }
+}
