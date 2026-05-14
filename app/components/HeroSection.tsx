@@ -170,13 +170,6 @@ const HeroSection = ({ id }: HeroSectionProps) => {
       <div className="pointer-events-none absolute bottom-20 left-4 hidden text-[clamp(9rem,20vw,20rem)] font-semibold leading-none text-white/[0.035] md:block">
         00
       </div>
-      <div className="absolute inset-x-0 bottom-0">
-        <Marquee
-          text="PIXELS ARE A PROMISE / CONCEPT ART / 3D WORLDS / CAMPAIGN VISUALS / ART DIRECTION / "
-          speed={20}
-          direction="left"
-        />
-      </div>
     </section>
   );
 };

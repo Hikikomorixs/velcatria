@@ -65,11 +65,6 @@ const HomePage = () => {
         <ScrollMorphArtwork chapter="PROCESS 01 / SKETCH TO IMAGE" />
         <div className="section-divider" />
         <Gallery2D id="gallery2d" />
-        <Marquee
-          text="DIGITAL ART / CONCEPT FRAMES / POSTERS / TABLET DRAWING / LIGHT STUDIES / "
-          speed={24}
-          direction="left"
-        />
         <ScrollMorphArtwork chapter="PROCESS 02 / COLOR TO MOOD" />
         <div className="section-divider" />
         <Gallery3D id="gallery3d" />

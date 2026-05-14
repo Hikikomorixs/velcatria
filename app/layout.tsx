@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "./components/CustomCursor";
+import MusicPlayer from "./components/MusicPlayer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -32,6 +33,7 @@ export default function RootLayout({
     >
       <body className="min-h-full bg-background text-foreground">
         <CustomCursor />
+        <MusicPlayer />
         {children}
       </body>
     </html>
